@@ -29,17 +29,21 @@ public class DrawerWelcome extends App {
 
 	Div header = new Div();
 	Div drawer = new Div();
-
+	Div iconButton = new Div();
+	Div drawerLogo = new Div();
+	
+	Strong title = new Strong("DWCJ Application");	
+	Button openWelcome = new Button("Open Welcome Page");
+	TabbedPane drawerMenu = new TabbedPane();
+	
 	@Override
 	public void run() throws DwcjException {
 		Frame window = new Frame();
 		window.add(demo);
 
 		// Header
-		Div iconButton = new Div();
 		iconButton.setHtml("<bbj-icon-button name='menu-2' data-drawer-toggle><bbj-icon-button>");
 
-		Strong title = new Strong("DWCJ Application");
 		header.add(iconButton, title);
 		header.addClassName("bbj__toolbar-drawer");
 
@@ -51,14 +55,12 @@ public class DrawerWelcome extends App {
 		demo.setDrawerPlacement(DrawerPlacement.LEFT);
 		
 		// Drawer's logo container and logo
-		Div drawerLogo = new Div();
 		drawerLogo.addClassName("drawer__logo")
 			.add(
 			new Img("https://i.ibb.co/1n4n1Nh/logo.png\" alt=\"logo\" /></div></html>"));
 		drawer.add(drawerLogo);
 			
 		// Drawer's Menu
-		TabbedPane drawerMenu = new TabbedPane();
 		drawer.add(drawerMenu);
 
 		drawerMenu.hideBody(true);
@@ -96,7 +98,6 @@ public class DrawerWelcome extends App {
 				.setExpanse(Expanse.LARGE));
 
 		// Content
-		Button openWelcome = new Button("Open Welcome Page");
 		openWelcome.onClick( e -> welcomeDrawer.open());
 
 		demo.addToContent(
