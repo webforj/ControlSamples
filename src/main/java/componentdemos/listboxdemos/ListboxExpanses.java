@@ -12,16 +12,23 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/expanse_styles.css")
 public class ListboxExpanses extends App {
+	
+	ListBox l1 = new ListBox();
+	ListBox l2 = new ListBox();
+	ListBox l3 = new ListBox();
+	ListBox l4 = new ListBox();
+	ListBox l5 = new ListBox();
+			
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    ListBox l1 = new ListBox().setExpanse(Expanse.XSMALL);
-    ListBox l2 = new ListBox().setExpanse(Expanse.SMALL);
-    ListBox l3 = new ListBox().setExpanse(Expanse.MEDIUM);
-    ListBox l4 = new ListBox().setExpanse(Expanse.LARGE);
-    ListBox l5 = new ListBox().setExpanse(Expanse.XLARGE);
+    l1.setExpanse(Expanse.XSMALL);
+    l2.setExpanse(Expanse.SMALL);
+    l3.setExpanse(Expanse.MEDIUM);
+    l4.setExpanse(Expanse.LARGE);
+    l5.setExpanse(Expanse.XLARGE);
 
     List<ListItem> data = new ArrayList<>();
     data.add(new ListItem("Random Data1", "Random Data"));

@@ -12,12 +12,14 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/label_styles.css")
 public class ListboxLabel extends App {
+	
+	ListBox l1 = new ListBox();
+	
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    ListBox l1 = new ListBox();
 
     l1.add("Random Data1", "Random Data");
     l1.add("Random Data2", "Some Data");

@@ -9,13 +9,15 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/listboxstyles/listbox_demo.css")
 public class ListboxDemo extends App {
+	
+	ListBox listBox = new ListBox();
 
     @Override
     public void run() throws DwcjException {
 
         Frame window = new Frame();
         window.addClassName("frame");
-        ListBox listBox = new ListBox();
+
         window.add(listBox);
 
         listBox.add("Financial Reports", "Financial Reports");

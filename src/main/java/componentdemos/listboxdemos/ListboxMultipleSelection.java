@@ -19,15 +19,15 @@ import org.dwcj.exceptions.DwcjException;
 """)
 public class ListboxMultipleSelection extends App {
 
-  ListBox listBox;
+  ListBox listBox  = new ListBox();
   SelectionMode selection = SelectionMode.SINGLE;
+  RadioButton toggle = RadioButton.Switch("Multiple Selection");
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("frame");
 
-    listBox = new ListBox();
     window.add(listBox);
 
     listBox.add("Random Data1", "Marketing and Sales");
@@ -36,7 +36,6 @@ public class ListboxMultipleSelection extends App {
     listBox.add("Random Data4", "Finance and HR");
     listBox.setLabel("Select Department(s)");
 
-    RadioButton toggle = RadioButton.Switch("Multiple Selection");
     window.add(toggle);
     toggle.onToggle(e -> {
       if (this.selection.equals(SelectionMode.SINGLE)) {
