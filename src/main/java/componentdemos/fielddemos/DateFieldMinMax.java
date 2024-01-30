@@ -9,6 +9,9 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/date_field_styles.css")
 public class DateFieldMinMax extends App {
+	
+	 DateField departure = new DateField(LocalDate.now());
+	 DateField returnField = new DateField(LocalDate.now().plusDays(1));
 
   @Override
   public void run() throws DwcjException {
@@ -16,12 +19,10 @@ public class DateFieldMinMax extends App {
     Frame window = new Frame();
     window.addClassName("main__window");
 
-    DateField departure = new DateField(LocalDate.now());
     departure.setLabel("Departure Date:")
         .setMin(LocalDate.now())
         .addClassName("date__input");
 
-    DateField returnField = new DateField(LocalDate.now().plusDays(1));
     returnField.setLabel("Return Date:")
         .addClassName("date__input");
 

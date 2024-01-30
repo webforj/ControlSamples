@@ -6,17 +6,17 @@ import org.dwcj.annotation.InlineStyleSheet;
 import org.dwcj.component.event.ModifyEvent;
 import org.dwcj.component.field.ColorField;
 import org.dwcj.component.layout.flexlayout.FlexLayout;
-import org.dwcj.component.text.Label;
 import org.dwcj.component.window.Frame;
-import org.dwcj.component.window.Panel;
+import org.dwcj.component.html.elements.Div;
 import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/color_field_styles.css")
 public class ColorFieldDemo extends App {
 
-  ColorField colorField;
+  ColorField colorField= new ColorField();
   Color[] tetradic = new Color[4];
-  Panel[] colors;
+  Div[] colors = new Div[4];
+  Div title = new Div("Tetradic complementary colors:");
 
   @Override
   public void run() throws DwcjException {
@@ -24,14 +24,12 @@ public class ColorFieldDemo extends App {
     Frame window = new Frame();
     window.addClassName("main__window");
 
-    colorField = new ColorField();
     colorField.addClassName("color__field")
         .setLabel("Choose a color:")
         .onModify(this::tetradicColor);
 
-    colors = new Panel[4];
     for (int i = 0; i <= 3; i++) {
-      colors[i] = new Panel();
+      colors[i] = new Div();
           colors[i].addClassName("color__panel");
     }
 
@@ -43,7 +41,6 @@ public class ColorFieldDemo extends App {
         .addClassName("display__panel");
     colorDisplay.setSpacing("20px");
 
-    Label title = new Label("Tetradic complementary colors:");
 
     colorField.setValue(Color.RED);
     tetradicColor(null);
@@ -61,7 +58,7 @@ public class ColorFieldDemo extends App {
     }
   }
 
-  private void setBackgroundColor(Panel colorPanel, Color color) {
+  private void setBackgroundColor(Div colorPanel, Color color) {
     colorPanel.setStyle("background-color", "rgb(" + String.valueOf(color.getRed()) +
         "," + String.valueOf(color.getGreen()) +
         "," + String.valueOf(color.getBlue()) +

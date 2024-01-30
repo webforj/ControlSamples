@@ -9,6 +9,8 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/date_field_styles.css")
 public class DateFieldDemo extends App {
+	
+	DateField departure = new DateField(LocalDate.now());
 
   @Override
   public void run() throws DwcjException {
@@ -16,7 +18,6 @@ public class DateFieldDemo extends App {
     Frame window = new Frame();
     window.addClassName("main__window");
 
-    DateField departure = new DateField(LocalDate.now());
     departure.setLabel("Departure Date:")
         .addClassName("date__input");
 

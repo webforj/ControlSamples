@@ -8,6 +8,8 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/date_field_styles.css")
 public class NumberFieldDemo extends App {
+	
+	 NumberField numField = new NumberField();
 
   @Override
   public void run() throws DwcjException {
@@ -15,7 +17,6 @@ public class NumberFieldDemo extends App {
     Frame window = new Frame();
     window.addClassName("main__window");
 
-    NumberField numField = new NumberField();
     numField.addClassName("date__input");
     numField.setLabel("Quantity:");
 

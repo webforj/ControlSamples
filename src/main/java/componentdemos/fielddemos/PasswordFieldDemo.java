@@ -8,6 +8,8 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/fieldstyles/date_field_styles.css")
 public class PasswordFieldDemo extends App {
+	
+	PasswordField passwordField = new PasswordField();
 
   @Override
   public void run() throws DwcjException {
@@ -15,7 +17,6 @@ public class PasswordFieldDemo extends App {
     Frame window = new Frame();
     window.addClassName("main__window");
 
-    PasswordField passwordField = new PasswordField();
     passwordField.addClassName("date__input");
     passwordField.setLabel("Enter your Password:");
     passwordField.setPlaceholder("Password");
