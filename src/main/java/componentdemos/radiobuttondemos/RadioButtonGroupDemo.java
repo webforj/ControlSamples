@@ -10,20 +10,21 @@ import org.dwcj.component.optioninput.RadioButtonGroup;
 
 @InlineStyleSheet("context://css/radiobuttonstyles/radiobutton_styles.css")
 public class RadioButtonGroupDemo extends App{
+	
+
+    RadioButton sAgree = new RadioButton("Strongly Agree");
+    RadioButton agree = new RadioButton("Agree");
+    RadioButton neutral = new RadioButton("Neutral");
+    RadioButton disagree = new RadioButton("Disagree");
+    RadioButton sDisagree = new RadioButton("Strongly Disagree");
+
+    RadioButtonGroup group = new RadioButtonGroup(sDisagree, disagree, neutral, agree, sAgree);
 
     @Override
     public void run() throws DwcjException {
 
         Frame window = new Frame();
         window.addClassName("frame");
-
-        RadioButton sAgree = new RadioButton("Strongly Agree");
-        RadioButton agree = new RadioButton("Agree");
-        RadioButton neutral = new RadioButton("Neutral");
-        RadioButton disagree = new RadioButton("Disagree");
-        RadioButton sDisagree = new RadioButton("Strongly Disagree");
-
-        RadioButtonGroup group = new RadioButtonGroup(sDisagree, disagree, neutral, agree, sAgree);
 
         FlexLayout layout = FlexLayout.create(group)
         .vertical()

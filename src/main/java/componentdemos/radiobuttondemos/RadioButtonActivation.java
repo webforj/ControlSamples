@@ -9,20 +9,21 @@ import org.dwcj.exceptions.DwcjException;
 
 @InlineStyleSheet("context://css/radiobuttonstyles/radiobutton_styles.css")
 public class RadioButtonActivation extends App{
+	
+	RadioButton autoActivateOne = new RadioButton("Auto Activated");
+	RadioButton autoActivateTwo = new RadioButton("Auto Activated");
+	RadioButton manualActivateOne = new RadioButton("Manually Activated");
+    RadioButton manualActivateTwo = new RadioButton("Manually Activated");
+	
   @Override
   public void run() throws DwcjException {
       Frame window = new Frame();
       window.addClassName("Frame");
 
-      RadioButton autoActivateOne = new RadioButton("Auto Activated");
       autoActivateOne.setActivation(Activation.AUTO)
         .focus();
-
-      RadioButton autoActivateTwo = new RadioButton("Auto Activated");
+   
       autoActivateTwo.setActivation(Activation.AUTO);
-
-      RadioButton manualActivateOne = new RadioButton("Manually Activated");
-      RadioButton manualActivateTwo = new RadioButton("Manually Activated");
      
       window.add(autoActivateOne, autoActivateTwo, manualActivateOne, manualActivateTwo);
   }
