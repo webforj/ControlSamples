@@ -10,14 +10,13 @@ import org.dwcj.component.progressbar.ProgressBar;
 @InlineStyleSheet("context://css/progressbarstyles/placeholder_styles.css")
 public class ProgressbarPlaceholders extends App {
 
-  ProgressBar pb;
+  ProgressBar pb = new ProgressBar();
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
 
-    pb = new ProgressBar();
     window.add(pb);
 
     pb.addClassName("progress__bar")

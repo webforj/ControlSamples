@@ -8,17 +8,18 @@ import org.dwcj.component.progressbar.ProgressBar;
 
 @InlineStyleSheet("context://css/progressbarstyles/theme_styles.css")
 public class ProgressbarThemes extends App {
-  @Override
-  public void run() throws DwcjException {
-    Frame window = new Frame();
-    window.addClassName("Frame");
-
+	
     ProgressBar pb1 = new ProgressBar();
     ProgressBar pb2 = new ProgressBar();
     ProgressBar pb3 = new ProgressBar();
     ProgressBar pb4 = new ProgressBar();
     ProgressBar pb5 = new ProgressBar();
     ProgressBar pb6 = new ProgressBar();
+    
+  @Override
+  public void run() throws DwcjException {
+    Frame window = new Frame();
+    window.addClassName("Frame");
 
     window.add(pb1, pb2, pb3, pb4, pb5, pb6);
 

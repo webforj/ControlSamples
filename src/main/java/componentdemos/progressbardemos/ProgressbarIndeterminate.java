@@ -9,12 +9,11 @@ import org.dwcj.component.progressbar.ProgressBar;
 @InlineStyleSheet("context://css/progressbarstyles/indeterminate_styles.css")
 public class ProgressbarIndeterminate extends App {
 
-  ProgressBar pb;
+  ProgressBar pb = new ProgressBar();
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
-    pb = new ProgressBar();
 
     window.addClassName("Frame").add(pb);
 

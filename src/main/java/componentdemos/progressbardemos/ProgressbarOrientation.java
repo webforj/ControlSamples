@@ -10,16 +10,13 @@ import org.dwcj.component.progressbar.ProgressBar;
 @InlineStyleSheet("context://css/progressbarstyles/orientation_styles.css")
 public class ProgressbarOrientation extends App {
 
-  ProgressBar pb;
-  ProgressBar pb2;
+  ProgressBar pb = new ProgressBar().addClassName("barVt");
+  ProgressBar pb2 = new ProgressBar().addClassName("barHz");
 
   @Override
   public void run() throws DwcjException {
     Frame window = new Frame();
     window.addClassName("Frame");
-
-    pb = new ProgressBar().addClassName("barVt");
-    pb2 = new ProgressBar().addClassName("barHz");
 
     window.add(pb2, pb);
 
